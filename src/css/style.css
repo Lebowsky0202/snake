@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section{
+    margin: 0 auto;
+    width: 1250px;
+    height: 750px;
+    background-color: rgb(44, 168, 209);
+    border: 10px solid rgb(215, 34, 34);
+}
+
+.snake{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(0, 63, 238);
+
+}
+
+/* .health-point head{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 30, 128);
+} */
+
