@@ -1,62 +1,37 @@
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
-    const snake = document.querySelector('.snake'),
-          section = document.querySelector('.section');
+    const snake = document.createElement('div');
+    const section = document.querySelector('.section');
+    
+    snake.classList.add('snake');
+    section.append(snake);
 
-    console.log(section.clientWidth);
-    function moveSnake(){
-        document.addEventListener('keydown', (e) => {
-            let i = 0;
-                // timerIdRight,
-                // timerIdDown;
-
-            // if(e.code === 'KeyD'){
-            //     timerIdRight = setTimeout(function tick(){
-            //         if(i > (section.clientWidth - 100)){
-            //             clearTimeout(timerIdRight);
-            //         }else{
-            //             i += 50;
-            //             snake.style.left = i + 'px';
-            //             timerIdRight = setTimeout(tick, 500);
-            //         }
-            //     });
-            // }else if (e.code == 'KeyS'){
-            //     clearTimeout(timerIdRight);
-            //     timerIdDown = setTimeout(function tick(){
-            //         if(i > (section.clientWidth)){
-            //             clearTimeout(timerIdDown);
-            //         }else{
-            //             i += 50;
-            //             snake.style.top = i + 'px';
-            //             timerIdDown = setTimeout(tick, 500);
-            //         }
-            //     });
-            // }
-            switch (e.code) {
-                case 'KeyD':
-                    let timerIdRight = setTimeout(function tick(){
-                            if(i > (section.clientWidth - 100) || e.code === 'KeyS'){
-                                clearTimeout(timerIdRight);
-                            }else{
-                                i += 50;
-                                snake.style.left = i + 'px';
-                                timerIdRight = setTimeout(tick, 500);
-                            }
-                        });
-                    break;
-                  case 'KeyS':
-                        let timerIdDown = setTimeout(function tick(){
-                            if(i > (section.clientHeight -100)){
-                                clearTimeout(timerIdDown);
-                            }else{
-                                i += 50;
-                                snake.style.top = i + 'px';
-                                timerIdDown = setTimeout(tick, 500);
-                            }
-                        });
-            }
-        });
+    function renderSnake(){
+        
     }
-    moveSnake()
 
+    function moveSnake(code){
+        let timerIDX,
+            timerIDY,
+            posX = 0,
+            posY = 0;
+
+        switch (code) {
+            case 'KeyD':
+                timerIDX = setTimeout(function tick(){
+
+                }, 500);
+                break;
+            case 'KeyS':
+                timerIDY = setTimeout(function tick(){
+
+                }, 500);
+                break;
+        }
+    }
+
+
+    document.addEventListener('keydown', (e) => {
+        moveSnake(e.code);
+    })
 });
